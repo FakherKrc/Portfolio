@@ -1,0 +1,63 @@
+// 3rd party brand colors - find more at brandcolors.net
+$color-twitter                : #55acee;
+$color-facebook               : #3b5998;
+$color-youtube                : #cd201f;
+$color-pinterest              : #bd081c;
+$color-instagram              : #e4405f;
+$color-whatsapp               : #25D366;
+
+.socialCTA {
+	background-color: rgba(#fff, .2);
+	padding: 20px;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+
+	.icon {
+		max-width: 100%;
+		vertical-align: top;
+		width: 50px;
+		height: 50px;
+	}
+
+	&:hover {
+		background-color: rgba(#fff, .7);
+
+		.icon {
+			color: orange;
+		}
+	}
+}
+
+.icon--twitter {
+	color: $color-twitter;
+}
+
+.icon--facebook {
+	color: $color-facebook;
+}
+
+.icon--instagram {
+	color: $color-instagram;
+}
+
+.icon--pinterest {
+	color: $color-pinterest;
+}
+
+.icon--youtube {
+	color: $color-youtube;
+}
+
+.icon--email {
+	color: blue;
+}
+
+.icon--kickoff {
+	color: #fff;
+}
+
+.icon--whatsapp {
+	color: $color-whatsapp;
+}
