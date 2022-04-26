@@ -1,0 +1,114 @@
+@font-face {
+    font-family: 'grape_nutsregular';
+    src: url('grapenuts-regular-webfont.woff2') format('woff2'),
+         url('grapenuts-regular-webfont.woff') format('woff');
+         
+}   
+         
+@font-face {
+            font-family: 'eurostileregular';
+            src: url('eurostile-webfont.woff2') format('woff2'),
+                 url('eurostile-webfont.woff') format('woff');
+            
+        
+        }
+
+header
+{
+margin-right: 10%;
+margin-left: 10%;
+margin-top: 3%;
+}
+h2{
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+.flex-header
+{
+    display: flex;
+    justify-content: flex-end;
+}
+.component h2 {
+    color: #141c3a;
+    font-weight: 600;
+    font-family: Inter, sans-serif;
+    font-size: 18px;
+    transition: all 0.2s ease;
+}
+
+.signature{
+
+    margin-right: auto;
+    
+   
+}
+
+.signature text{
+    font-family: "grape_nutsregular", sans-serif;
+    font-weight: 800;
+    font-size: 34px;
+    color: #141c3a;
+   
+}
+.component h2:hover{
+    color:#7510F7;
+}
+.rubrique_cv
+{
+margin-right: 10%;
+}
+
+
+
+#wrap{
+    position: relative;
+}
+#wrap ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin: auto;
+    padding: 0;
+    width: 10rem;
+    border: 1px solid #d8e1e8;
+    box-shadow: 0  4px #d8e1e8;
+   
+   
+}
+#wrap li{
+    padding: 1rem;
+    list-style: none;
+    color: black;
+    border-bottom: 1px solid #d8e1e8;
+    text-align: center;
+}
+.rubrique_jury a{
+    text-decoration: none;
+    color:#7510F7;
+}
+
+#wrap h5{
+    padding: 1rem;
+    list-style: none;
+    color: #6c757d;
+    font-size: 14px;
+    font-family: Inter, sans-serif;
+    font-weight: 200;
+    text-align: center;
+    border-bottom: 1px solid #d8e1e8;
+    margin: 0;
+}
+
+.rubrique_jury h2:after {
+    color: #444;
+    content: ' ▾';
+ }
+
+ .none{
+     display: none;
+ }
+
+ a{
+     text-decoration: none;
+ }

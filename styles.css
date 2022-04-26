@@ -31,11 +31,15 @@ h2{
 }
 .component h2 {
     color: #141c3a;
-    font-weight: 500;
+    font-weight: 600;
     font-family: Inter, sans-serif;
-    font-size: 20px;
+    font-size: 18px;
+    transition: all 0.2s ease;
 }
 
+.component h2:hover{
+    color:#7510F7;
+}
 .rubrique_cv
 {
 margin-right: 10%;
@@ -164,8 +168,8 @@ margin-right: 10%;
 .block-competence{
 
     padding-top: 2rem; 
-    width: 400px;
-    height: 700px;
+    width: 25rem;;
+    height: 36rem;
     border: 1px solid #d5e3ec;
     border-radius: 8px;
     box-shadow: 0 2px 4px #d8e1e8;
@@ -174,7 +178,9 @@ margin-right: 10%;
     background-color: white;
     
 }
-
+.last{
+    border-bottom: none !important;
+}
 .competence_flex{
 
     display: flex;
@@ -205,7 +211,9 @@ margin-right: 10%;
     margin-top: 0px;
 
 }
-
+.first{
+    margin-top: 8% !important;
+}
 .container-elements{
     padding-top: 1rem;
     padding-right: 1rem;
@@ -225,16 +233,16 @@ margin-right: 10%;
 }
 
 .block-competence text{
-    margin: 1rem;
-    font-size: 20px;
+
+    font-size: 16px;
     font-family: 'eurostileregular';
     font-weight: 100;
     text-align: center;
-    margin: 1rem 0;
+    margin: 0.3rem 0;
     
 }
 .presentation h4{
-    font-size: 24px;
+    font-size: 20px;
     font-family: 'eurostileregular';
     font-weight: 500;
     text-align: center;
@@ -321,3 +329,64 @@ width: 60%;
     display: block;
     margin: auto;
 }
+
+.text_block{
+    font-size: 16px;
+    font-family: 'eurostileregular';
+    font-weight: 100;
+    text-align: center;
+    margin-top: 0;
+}
+
+
+#wrap{
+    position: relative;
+}
+#wrap ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin: auto;
+    padding: 0;
+    width: 10rem;
+    border: 1px solid #d8e1e8;
+    box-shadow: 0  4px #d8e1e8;
+   
+   
+}
+#wrap li{
+    padding: 1rem;
+    list-style: none;
+    color: black;
+    border-bottom: 1px solid #d8e1e8;
+    text-align: center;
+}
+.rubrique_jury a{
+    text-decoration: none;
+    color:#7510F7;
+}
+
+#wrap h5{
+    padding: 1rem;
+    list-style: none;
+    color: #6c757d;
+    font-size: 14px;
+    font-family: Inter, sans-serif;
+    font-weight: 200;
+    text-align: center;
+    border-bottom: 1px solid #d8e1e8;
+    margin: 0;
+}
+
+.rubrique_jury h2:after {
+    color: #444;
+    content: ' ▾';
+ }
+
+ .none{
+     display: none;
+ }
+
+ a{
+     text-decoration: none;
+ }
