@@ -32,7 +32,7 @@ h2{
 .component h2 {
     color: #141c3a;
     font-weight: 600;
-    font-family: Inter, sans-serif;
+    font-family: "eurostileregular",Inter, sans-serif;
     font-size: 18px;
     transition: all 0.2s ease;
 }
@@ -91,10 +91,21 @@ margin-right: 10%;
    
 }
 
+
+.signature text{
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.signature text:hover{
+    color: #7510F7;
+
+}
+
 .signature text{
     font-family: "grape_nutsregular", sans-serif;
-    font-weight: 800;
-    font-size: 34px;
+    font-weight: 600;
+    font-size: 28px;
     color: #141c3a;
    
 }
@@ -120,10 +131,13 @@ margin-right: 10%;
 }
 .logo:hover{
     color: #7510F7;
+
 }
 
 .logo{
     padding-right: 10px;
+    transition: all 0.2s ease;
+    cursor: pointer;
 }
 
 .biographie{
@@ -389,4 +403,30 @@ width: 60%;
 
  a{
      text-decoration: none;
+ }
+
+ .is-small{
+    display: inline-flex;
+    background-color: transparent !important;
+    color: #7510F7 !important;
+    border-radius: 100% !important;
+    margin: 0 0.2rem !important;
+    height: 47px !important;
+    width: 47px !important;
+    border: 2px solid #7510F7 !important;
+    text-align: center !important;
+    justify-content: center;
+    transition: all 0.3s ease;
+ }
+ 
+ .socialsvg{
+     width: 1.5rem;
+ }
+
+ .is-small:hover
+ {
+     color: white !important;
+     background-color: #7510F7 !important;
+     height: 45px !important;
+     width: 45px !important;
  }

@@ -1,0 +1,495 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gestionnnaire</name>
+    </assembly>
+    <members>
+        <member name="F:Gestionnnaire.connexion.ConnexionBDD.instance">
+            <summary>
+            Unique instance de la classe
+            </summary>
+        </member>
+        <member name="F:Gestionnnaire.connexion.ConnexionBDD.connection">
+            <summary>
+            objet de connexion à la BDD à partir d'une chaîne de connexion
+            </summary>
+        </member>
+        <member name="F:Gestionnnaire.connexion.ConnexionBDD.command">
+            <summary>
+            objet pour exécuter une requête SQL
+            </summary>
+        </member>
+        <member name="F:Gestionnnaire.connexion.ConnexionBDD.reader">
+            <summary>
+            objet contenant le résultat d'une requête "select" (curseur)
+            </summary>
+        </member>
+        <member name="M:Gestionnnaire.connexion.ConnexionBDD.#ctor(System.String)">
+            <summary>
+            Constructeur privé pour créer la connexion à la BDD et l'ouvrir
+            </summary>
+            <param name="stringConnect">chaine de connexion</param>
+        </member>
+        <member name="M:Gestionnnaire.connexion.ConnexionBDD.GetInstance(System.String)">
+            <summary>
+            Crée une instance unique de la classe
+            </summary>
+            <param name="stringConnect">chaine de connexion</param>
+            <returns>instance unique de la classe</returns>
+        </member>
+        <member name="M:Gestionnnaire.connexion.ConnexionBDD.ReqUpdate(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Exécution d'une requête autre que "select"
+            </summary>
+            <param name="stringQuery">requête autre que select</param>
+            <param name="parameters">dictionnire contenant les parametres</param>
+        </member>
+        <member name="M:Gestionnnaire.connexion.ConnexionBDD.ReqSelect(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Exécute une requête type "select" et valorise le curseur
+            </summary>
+            <param name="stringQuery">requête select</param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Gestionnnaire.connexion.ConnexionBDD.Read">
+            <summary>
+            Tente de lire la ligne suivante du curseur
+            </summary>
+            <returns>false si fin de curseur atteinte</returns>
+        </member>
+        <member name="M:Gestionnnaire.connexion.ConnexionBDD.Field(System.String)">
+            <summary>
+            Retourne le contenu d'un champ dont le nom est passé en paramètre
+            </summary>
+            <param name="nameField">nom du champ</param>
+            <returns>valeur du champ</returns>
+        </member>
+        <member name="M:Gestionnnaire.connexion.ConnexionBDD.Close">
+            <summary>
+            Fermeture du curseur
+            </summary>
+        </member>
+        <member name="F:Gestionnnaire.controleur.Controle.frmAuthentification">
+            <summary>
+            fenêtre d'authentification
+            </summary>
+        </member>
+        <member name="F:Gestionnnaire.controleur.Controle.frmAbsence">
+            <summary>
+            Fênetre de gestion des absences
+            </summary>
+        </member>
+        <member name="M:Gestionnnaire.controleur.Controle.#ctor">
+            <summary>
+            Ouverture de la fenêtre
+            </summary>
+        </member>
+        <member name="M:Gestionnnaire.controleur.Controle.FrmAbsences(Gestionnnaire.modele.Personnel)">
+            <summary>
+            Demande l'instanciation la FrmAbsences
+            </summary>
+            <param name="personnel"></param>
+        </member>
+        <member name="M:Gestionnnaire.controleur.Controle.ControleAuthentification(System.String,System.String)">
+            <summary>
+            Demande de controler l'authentification 
+            Si oui alors : ouverture de la fenêtre principale.
+            </summary>
+            <param name="login"></param>
+            <param name="pwd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gestionnnaire.controleur.Controle.GetLesPersonnels">
+            <summary>
+            Demande la liste des personnels
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gestionnnaire.controleur.Controle.DelPersonnel(System.Int32)">
+            <summary>
+            Demande la suppression d'un personnel
+            </summary>
+            <param name="idpersonnel"></param>
+        </member>
+        <member name="M:Gestionnnaire.controleur.Controle.AddPersonnel(Gestionnnaire.modele.Personnel)">
+            <summary>
+            Demande l'ajout d'un personnel
+            </summary>
+            <param name="personnel"></param>
+        </member>
+        <member name="M:Gestionnnaire.controleur.Controle.UpdatePersonnel(Gestionnnaire.modele.Personnel)">
+            <summary>
+            Demande la modification d'un personnel
+            </summary>
+            <param name="personnel"></param>
+        </member>
+        <member name="M:Gestionnnaire.controleur.Controle.GetLesServices">
+            <summary>
+            Demande de récuperer la listte des services
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gestionnnaire.controleur.Controle.GetLesAbsences(System.Int32)">
+            <summary>
+            Demande de récuperer les absences.
+            </summary>
+            <param name="idpersonnel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gestionnnaire.controleur.Controle.DelAbsence(System.Int32,System.DateTime)">
+            <summary>
+            Demande de supprimer une absence.
+            </summary>
+            <param name="idpersonnel"></param>
+            <param name="datedebut"></param>
+        </member>
+        <member name="M:Gestionnnaire.controleur.Controle.AddAbsence(Gestionnnaire.modele.Absence)">
+            <summary>
+            Demande d'ajouter une absence.
+            </summary>
+            <param name="absence"></param>
+        </member>
+        <member name="M:Gestionnnaire.controleur.Controle.UpdateAbsence(System.DateTime,Gestionnnaire.modele.Absence)">
+            <summary>
+            Demande de modifier une absence. 
+            </summary>
+            <param name="debut"></param>
+            <param name="absence"></param>
+        </member>
+        <member name="M:Gestionnnaire.controleur.Controle.GetLesMotifs">
+            <summary>
+            Demande la recuperation de la liste des motifs
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Gestionnnaire.dal.AccesDonnees.connectionString">
+            <summary>
+            chaine de connexion à la bdd
+            </summary>
+        </member>
+        <member name="M:Gestionnnaire.dal.AccesDonnees.ControleAuthentification(System.String,System.String)">
+            <summary>
+            Controle si l'utillisateur a le droit de se connecter (login, pwd)
+            </summary>
+            <param name="login"></param>
+            <param name="pwd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gestionnnaire.dal.AccesDonnees.GetLesPersonnels">
+            <summary>
+            Récupère et retourne les personnels provenant de la BDD
+            </summary>
+            <returns>liste des personnels</returns>
+        </member>
+        <member name="M:Gestionnnaire.dal.AccesDonnees.DelPersonnel(System.Int32)">
+            <summary>
+            Suppression d'un personnel
+            </summary>
+            <param name="idpersonnel">objet personnel à supprimer</param>
+        </member>
+        <member name="M:Gestionnnaire.dal.AccesDonnees.AddPersonnel(Gestionnnaire.modele.Personnel)">
+            <summary>
+            Ajoute un personnel
+            </summary>
+            <param name="personnel"></param>
+        </member>
+        <member name="M:Gestionnnaire.dal.AccesDonnees.UpdatePersonnel(Gestionnnaire.modele.Personnel)">
+            <summary>
+            Modification d'un personnel
+            </summary>
+            <param name="personnel"></param>
+        </member>
+        <member name="M:Gestionnnaire.dal.AccesDonnees.GetLesServices">
+            <summary>
+            Récupère et retourne les profils provenant de la BDD
+            </summary>
+            <returns>liste des services</returns>
+        </member>
+        <member name="M:Gestionnnaire.dal.AccesDonnees.GetLesAbsences(System.Int32)">
+            <summary>
+            Récupère et retourne les absences d'un personnel provenant de la BDD
+            </summary>
+            <returns>liste des absences d'un personnel</returns>
+            <param name="idpersonnel"></param>
+        </member>
+        <member name="M:Gestionnnaire.dal.AccesDonnees.DelAbsence(System.Int32,System.DateTime)">
+            <summary>
+            Suppression d'une absence
+            </summary>
+            <param name="idpersonnel"></param>
+            <param name="datedebut"></param>
+        </member>
+        <member name="M:Gestionnnaire.dal.AccesDonnees.AddAbsence(Gestionnnaire.modele.Absence)">
+            <summary>
+            Ajoute une absence à unn personnel
+            </summary>
+            <param name="absence"></param>
+        </member>
+        <member name="M:Gestionnnaire.dal.AccesDonnees.UpdateAbsence(System.DateTime,Gestionnnaire.modele.Absence)">
+            <summary>
+            Modification d'une absence
+            </summary>
+            <param name="datedebutOld"></param>
+            <param name="absence"></param>
+        </member>
+        <member name="M:Gestionnnaire.dal.AccesDonnees.GetLesMotifs">
+            <summary>
+            Récupère et retourne les motifs provenant de la BDD
+            </summary>
+            <returns>liste des motifs</returns>
+        </member>
+        <member name="M:Gestionnnaire.modele.Absence.#ctor(System.Int32,System.DateTime,System.DateTime,System.Int32,System.String)">
+            <summary>
+            Constructeur : valorise les propriétés.
+            </summary>
+            <param name="idpersonnel"></param>
+            <param name="datedebut"></param>
+            <param name="datefin"></param>
+            <param name="idmotif"></param>
+            <param name="motif"></param>
+        </member>
+        <member name="M:Gestionnnaire.modele.Motif.#ctor(System.Int32,System.String)">
+            <summary>
+            Constructeur : valorise les propriétés
+            </summary>
+            <param name="idmotif"></param>
+            <param name="nom"></param>
+        </member>
+        <member name="M:Gestionnnaire.modele.Motif.ToString">
+            <summary>
+            Définit l'information à afficher (juste le nom)
+            </summary>
+            <returns>nom du motif</returns>
+        </member>
+        <member name="M:Gestionnnaire.modele.Personnel.#ctor(System.Int32,System.String,System.String,System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Constructeur : valorise les propriétés
+            </summary>
+            <param name="idpersonnel"></param>
+            <param name="nom"></param>
+            <param name="prenom"></param>
+            <param name="tel"></param>
+            <param name="mail"></param>
+            <param name="idservice"></param>
+            <param name="service"></param>
+        </member>
+        <member name="M:Gestionnnaire.modele.Service.#ctor(System.Int32,System.String)">
+            <summary>
+            Constructeur : valorise les propriétés
+            </summary>
+            <param name="idservice"></param>
+            <param name="nom"></param>
+        </member>
+        <member name="M:Gestionnnaire.modele.Service.ToString">
+            <summary>
+            Définit l'information à afficher (juste le nom)
+            </summary>
+            <returns>nom du profil</returns>
+        </member>
+        <member name="M:Gestionnnaire.Program.Main">
+            <summary>
+            Point d'entrée principal de l'application.
+            </summary>
+        </member>
+        <member name="M:Gestionnnaire.vue.FrmAbsences.#ctor(Gestionnnaire.controleur.Controle,Gestionnnaire.modele.Personnel)">
+            <summary>
+            Construit la Frame Absence et recupere l'instance de controle.
+            </summary>
+            <param name="controle"></param>
+            <param name="personnel"></param>
+        </member>
+        <member name="M:Gestionnnaire.vue.FrmAbsences.Init">
+            <summary>
+            Remplie la fenêtre de la liste des personnels et des services. 
+            </summary>
+        </member>
+        <member name="M:Gestionnnaire.vue.FrmAbsences.RemplirListeAbsences">
+            <summary>
+            Remplit la DataGriedView avec les absences.
+            </summary>
+        </member>
+        <member name="M:Gestionnnaire.vue.FrmAbsences.RemplirListeMotifs">
+            <summary>
+            Affiche les Motifs
+            </summary>
+        </member>
+        <member name="M:Gestionnnaire.vue.FrmAbsences.ViderAbsence">
+            <summary>
+            Vider les zones de saisie d'une absence
+            </summary>
+        </member>
+        <member name="M:Gestionnnaire.vue.FrmAbsences.btnSupprimer_Click_1(System.Object,System.EventArgs)">
+            <summary>
+            Demande de suppression d'une absence
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Gestionnnaire.vue.FrmAbsences.Annuler">
+            <summary>
+            Annule l'enregistrement d'une absence
+            </summary>
+        </member>
+        <member name="M:Gestionnnaire.vue.FrmAbsences.btnAnnulAbs_Click(System.Object,System.EventArgs)">
+            <summary>
+            Annule une absence
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Gestionnnaire.vue.FrmAbsences.btnEnregAbsence_Click(System.Object,System.EventArgs)">
+            <summary>
+            Enregistre une absence
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Gestionnnaire.vue.FrmAbsences.btnModifAbsences_Click(System.Object,System.EventArgs)">
+            <summary>
+            Modifie une absence
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Gestionnnaire.vue.FrmAbsences.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Gestionnnaire.vue.FrmAbsences.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Gestionnnaire.vue.FrmAbsences.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Gestionnnaire.vue.FrmAuthentification.#ctor(Gestionnnaire.controleur.Controle)">
+            <summary>
+            Constructeur de la Frame Authentification
+            </summary>
+            <param name="controle"></param>
+        </member>
+        <member name="M:Gestionnnaire.vue.FrmAuthentification.btnSeconnecter_Click(System.Object,System.EventArgs)">
+            <summary>
+            Controle l'authentification au clique de la souris 
+            Si champs incorrect : affiche erreur. P0
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Gestionnnaire.vue.FrmAuthentification.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Gestionnnaire.vue.FrmAuthentification.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Gestionnnaire.vue.FrmAuthentification.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Gestionnnaire.vue.FrmPersonnel.#ctor(Gestionnnaire.controleur.Controle)">
+            <summary>
+            Construit la Frame Personnel et recupere l'instance de controle
+            </summary>
+            <param name="controle"></param>
+        </member>
+        <member name="M:Gestionnnaire.vue.FrmPersonnel.Init">
+            <summary>
+            Remplie la fenêtre de la liste des personnels et des services. 
+            </summary>
+        </member>
+        <member name="M:Gestionnnaire.vue.FrmPersonnel.RemplirListePersonnel">
+            <summary>
+            Remplis la DataGriedView par la liste des personnels. 
+            </summary>
+        </member>
+        <member name="M:Gestionnnaire.vue.FrmPersonnel.RemplirListeService">
+            <summary>
+            Affiche les Services
+            </summary>
+        </member>
+        <member name="M:Gestionnnaire.vue.FrmPersonnel.ViderPersonnel">
+            <summary>
+            Vider les zones de saisie d'un personnel
+            </summary>
+        </member>
+        <member name="M:Gestionnnaire.vue.FrmPersonnel.btnSupprimer_Click(System.Object,System.EventArgs)">
+            <summary>
+            Demande de suppression d'un personnel
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Gestionnnaire.vue.FrmPersonnel.Annuler">
+            <summary>
+            Annule l'enregistrement d'un personnel
+            </summary>
+        </member>
+        <member name="M:Gestionnnaire.vue.FrmPersonnel.btnAnnulerPersonnel_Click(System.Object,System.EventArgs)">
+            <summary>
+            Annule un personnel
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Gestionnnaire.vue.FrmPersonnel.btnEnregPersonnel_Click(System.Object,System.EventArgs)">
+            <summary>
+            Enregistre un personnel
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Gestionnnaire.vue.FrmPersonnel.btnModifier_Click(System.Object,System.EventArgs)">
+            <summary>
+            Modifie un personnel
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Gestionnnaire.vue.FrmPersonnel.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Gestionnnaire.vue.FrmPersonnel.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Gestionnnaire.vue.FrmPersonnel.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Gestionnnaire.Properties.Resources">
+            <summary>
+              Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
+            </summary>
+        </member>
+        <member name="P:Gestionnnaire.Properties.Resources.ResourceManager">
+            <summary>
+              Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
+            </summary>
+        </member>
+        <member name="P:Gestionnnaire.Properties.Resources.Culture">
+            <summary>
+              Remplace la propriété CurrentUICulture du thread actuel pour toutes
+              les recherches de ressources à l'aide de cette classe de ressource fortement typée.
+            </summary>
+        </member>
+    </members>
+</doc>
